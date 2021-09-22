@@ -1,1 +1,1 @@
-worker: python formbot.py
+worker: python .src/formbot.py
