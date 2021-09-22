@@ -1,1 +1,1 @@
-worker python formbot.py
+worker: python formbot.py
