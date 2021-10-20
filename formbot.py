@@ -110,6 +110,7 @@ async def check_form(user, message):
             break
         elif '6/7' in i.content:
             await send_question(user, 6)
+            break
         elif '7/7' in i.content:
             history = await message.channel.history().flatten()
             answers = collect(history)
