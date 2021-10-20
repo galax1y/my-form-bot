@@ -8,7 +8,7 @@ TOKEN = config.TOKEN
 client = discord.Client()
 questions = ["Pergunta 1/7\nQual sua idade?",
              "Pergunta 2/7\nTem microfone?",
-             "Pergunta 3/7\nQual seu nick no game?"
+             "Pergunta 3/7\nQual seu nick no game?",
              "Pergunta 4/7\nEscolheu as armas que vai usar? Se sim, quais?",
              "Pergunta 5/7\nQual estilo de jogo mais te agrada? ex. Crafting, PvE, PvP, GvG...",
              "Pergunta 6/7\nSe compromete em ler e seguir as regras da guild?",
@@ -110,7 +110,7 @@ async def check_form(user, message):
             break
         elif '6/7' in i.content:
             await send_question(user, 6)
-        elif '6/7' in i.content:
+        elif '7/7' in i.content:
             history = await message.channel.history().flatten()
             answers = collect(history)
 
