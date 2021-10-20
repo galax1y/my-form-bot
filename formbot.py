@@ -6,12 +6,13 @@ GUILD = config.GUILD
 TOKEN = config.TOKEN
 
 client = discord.Client()
-questions = ["Pergunta 1/6\nQual sua idade?",
-             "Pergunta 2/6\nTem microfone?",
-             "Pergunta 3/6\nEscolheu as armas que vai usar? Se sim, quais?",
-             "Pergunta 4/6\nQual estilo de jogo mais te agrada? ex. Crafting, PvE, PvP, GvG...",
-             "Pergunta 5/6\nSe compromete em ler e seguir as regras da guild?",
-             "Pergunta 6/6\nSe compromete em ficar atento ao canal de comunicados da guild?",
+questions = ["Pergunta 1/7\nQual sua idade?",
+             "Pergunta 2/7\nTem microfone?",
+             "Pergunta 3/7\nQual seu nick no game?"
+             "Pergunta 4/7\nEscolheu as armas que vai usar? Se sim, quais?",
+             "Pergunta 5/7\nQual estilo de jogo mais te agrada? ex. Crafting, PvE, PvP, GvG...",
+             "Pergunta 6/7\nSe compromete em ler e seguir as regras da guild?",
+             "Pergunta 7/7\nSe compromete em ficar atento ao canal de comunicados da guild?",
              "Você completou o formulário, entraremos em contato."]
 
 
@@ -92,28 +93,30 @@ async def send_question(user, number):
 async def check_form(user, message):
     history = await message.channel.history().flatten()
     for i in history:
-        if '1/6' in i.content:
+        if '1/7' in i.content:
             await send_question(user, 1)
             break
-        elif '2/6' in i.content:
+        elif '2/7' in i.content:
             await send_question(user, 2)
             break
-        elif '3/6' in i.content:
+        elif '3/7' in i.content:
             await send_question(user, 3)
             break
-        elif '4/6' in i.content:
+        elif '4/7' in i.content:
             await send_question(user, 4)
             break
-        elif '5/6' in i.content:
+        elif '5/7' in i.content:
             await send_question(user, 5)
             break
-        elif '6/6' in i.content:
+        elif '6/7' in i.content:
+            await send_question(user, 6)
+        elif '6/7' in i.content:
             history = await message.channel.history().flatten()
             answers = collect(history)
 
             await clear_dm_with_user(user)
 
-            await send_question(user, 6)
+            await send_question(user, 7)
             await send_to_log(user, answers)
             break
 
@@ -142,7 +145,7 @@ def collect(history):
     for i in range(len(history)):
         if i == 0:
             answers.append(history[i].content)
-        elif '/6' in history[i].content and '1/6' not in history[i].content:
+        elif '/7' in history[i].content and '1/7' not in history[i].content:
             answers.append(history[i+1].content)
     answers.reverse()
     return answers
