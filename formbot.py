@@ -1,5 +1,5 @@
 import discord
-from discord.utils import get
+#from discord.utils import get
 import config
 import datetime
 
@@ -15,7 +15,7 @@ questions = ["Pergunta 1/7\nQual sua idade?",
              "Pergunta 6/7\nSe compromete em ler e seguir as regras da guild?",
              "Pergunta 7/7\nSe compromete em ficar atento ao canal de comunicados da guild?",
              "Você completou o formulário, entraremos em contato."]
-role_to_ping = 'Officer'
+#role_to_ping = 'Officer'
 
 @client.event
 async def on_ready():
@@ -154,7 +154,7 @@ def collect(history):
 
 
 async def send_to_log(user, answers):
-    role = get(guild.roles, name=role_to_ping)
+    #role = get(guild.roles, name=role_to_ping)
     embed_answer = discord.Embed(title=user, color=0x220f21, timestamp=datetime.datetime.utcnow())
     backlog = await client.fetch_channel(config.BACKLOG)
     if len(answers) < 6:
@@ -165,6 +165,6 @@ async def send_to_log(user, answers):
                                value=answers[i],
                                inline=False)
     await backlog.send(user.mention, embed=embed_answer)
-    await backlog.send(role.mention)
+    #await backlog.send(role.mention)
 
 client.run(TOKEN)
