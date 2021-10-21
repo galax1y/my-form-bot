@@ -154,7 +154,7 @@ def collect(history):
 
 
 async def send_to_log(user, answers):
-    role = get(guild.roles, name=role_to_ping)
+    #role = get(guild.roles, name=role_to_ping)
     embed_answer = discord.Embed(title=user, color=0x220f21, timestamp=datetime.datetime.utcnow())
     backlog = await client.fetch_channel(config.BACKLOG)
     if len(answers) < 6:
