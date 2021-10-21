@@ -164,7 +164,6 @@ async def send_to_log(user, answers):
         embed_answer.add_field(name=questions[i],
                                value=answers[i],
                                inline=False)
-    await backlog.send(user.mention, embed=embed_answer)
-    await backlog.send("oi :^)")
+    await backlog.send(user.mention, 'oi', embed=embed_answer)
 
 client.run(TOKEN)
