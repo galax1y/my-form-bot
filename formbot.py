@@ -15,7 +15,7 @@ questions = ["Pergunta 1/7\nQual sua idade?",
              "Pergunta 6/7\nSe compromete em ler e seguir as regras da guild?",
              "Pergunta 7/7\nSe compromete em ficar atento ao canal de comunicados da guild?",
              "Você completou o formulário, entraremos em contato."]
-#role_to_ping = 'Officer'
+role_to_ping = 'Officer'
 
 @client.event
 async def on_ready():
