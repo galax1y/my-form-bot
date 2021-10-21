@@ -166,6 +166,6 @@ async def send_to_log(user, answers):
                                value=answers[i],
                                inline=False)
     await backlog.send(user.mention, embed=embed_answer)
-    await backlog.send(<@&role.id>)
+    await backlog.send(role.mention)
 
 client.run(TOKEN)
