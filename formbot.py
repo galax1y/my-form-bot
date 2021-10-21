@@ -164,10 +164,7 @@ async def send_to_log(user, answers):
         embed_answer.add_field(name=questions[i],
                                value=answers[i],
                                inline=False)
-    embed_answer.add_field(name='test_role',
-                            value = role,
-                            insile=False)
     await backlog.send(user.mention, embed=embed_answer)
-    #await backlog.send(role.mention)
+    await backlog.send("oi :^)")
 
 client.run(TOKEN)
