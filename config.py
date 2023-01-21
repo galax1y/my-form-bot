@@ -1,8 +1,8 @@
 MAX_LENGHT = 12
-TOKEN = 'ODg4NTYyNDc0MTA0Nzk5Mjgz.YUUgSg.crqRYP-JEGbkMnSCo11pJGX_MRA'
-GUILD = '744215316439105537'
-DISCRIMINATOR = '5679'
-GUILD_ID = 675096909207044116
-REGISTER = 887407946194120794
-MEMBER_ID = 881401690161545296
-BACKLOG = 889286890862309396
+TOKEN = "token do bot"
+GUILD = "configuração específica do servidor"
+DISCRIMINATOR = "id do bot no discord"
+GUILD_ID = "configuração específica do servidor"
+REGISTER = "configuração específica do servidor"
+MEMBER_ID = "configuração específica do servidor"
+BACKLOG = "id do canal de backlog"
